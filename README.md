@@ -18,3 +18,5 @@ python main.py #在main调用train()方法
 ## 测试模型训练
 加载权重，默认保存最后一个权重
 python main.py #在main调用infer()方法
+
+![](https://img-blog.csdn.net/20180508083935908)
