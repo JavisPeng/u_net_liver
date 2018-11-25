@@ -10,7 +10,8 @@
    		--val
 ```
 
-数据和权重可以使用百度云下载
+数据和权重可以使用百度云下载 链接：https://pan.baidu.com/s/10E0CIehRMUA7zepmSbtjjA 提取码：wabv 
+复制这段内容后打开百度网盘手机App，操作更方便哦
 
 ## 模型训练
 python main.py #在main调用train()方法
