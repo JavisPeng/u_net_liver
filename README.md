@@ -1,5 +1,29 @@
 # u_net_liver
 
+## data preparation
+structure of project
+```
+  --project
+  	main.py
+  	 --data
+   		--train
+   		--val
+```
+to download data and trained weight link:https://pan.baidu.com/s/10E0CIehRMUA7zepmSbtjjA code：wabv 
+
+
+## training
+```
+python main.py train
+```
+
+## testing
+load the last saved weight
+```
+python main.py test --ckp=weights_19.pth
+```
+----
+
 ## 数据准备
 项目文件分布如下
 ```
