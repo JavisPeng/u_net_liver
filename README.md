@@ -1,5 +1,5 @@
 # unet liver
-
+Unet network for liver CT image segmentation
 ## data preparation
 structure of project
 ```
