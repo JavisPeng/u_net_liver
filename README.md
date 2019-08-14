@@ -1,4 +1,4 @@
-# u_net_liver
+# unet liver
 
 ## data preparation
 structure of project
