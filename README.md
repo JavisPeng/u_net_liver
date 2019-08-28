@@ -9,7 +9,7 @@ structure of project
    		--train
    		--val
 ```
-to download data and trained weight link:https://pan.baidu.com/s/10E0CIehRMUA7zepmSbtjjA code：wabv 
+to download data and trained weight link:https://pan.baidu.com/s/1oCKoujsZGi5iV1w1xiwTVg code: 1dhw 
 
 
 ## training
@@ -34,7 +34,7 @@ python main.py test --ckp=weights_19.pth
    		--val
 ```
 
-数据和权重可以使用百度云下载 链接：https://pan.baidu.com/s/10E0CIehRMUA7zepmSbtjjA 提取码：wabv 
+数据和权重可以使用百度云下载 链接: https://pan.baidu.com/s/1oCKoujsZGi5iV1w1xiwTVg 提取码: 1dhw 
 
 ## 模型训练
 ```
