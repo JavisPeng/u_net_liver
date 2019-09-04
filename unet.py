@@ -1,6 +1,5 @@
-import torch.nn as nn
 import torch
-from torch import autograd
+from torch import nn
 
 class DoubleConv(nn.Module):
     def __init__(self, in_ch, out_ch):
@@ -64,8 +63,8 @@ class Unet(nn.Module):
         merge9=torch.cat([up_9,c1],dim=1)
         c9=self.conv9(merge9)
         c10=self.conv10(c9)
-        out = nn.Sigmoid()(c10)
-        return out
+        #out = nn.Sigmoid()(c10)
+        return c10
 
 
 

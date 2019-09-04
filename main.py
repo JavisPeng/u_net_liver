@@ -1,8 +1,7 @@
-import numpy as np
 import torch
 import argparse
 from torch.utils.data import DataLoader
-from torch import autograd, optim
+from torch import nn, optim
 from torchvision.transforms import transforms
 from unet import Unet
 from dataset import LiverDataset
@@ -42,7 +41,7 @@ def train_model(model, criterion, optimizer, dataload, num_epochs=20):
             optimizer.step()
             epoch_loss += loss.item()
             print("%d/%d,train_loss:%0.3f" % (step, (dt_size - 1) // dataload.batch_size + 1, loss.item()))
-        print("epoch %d loss:%0.3f" % (epoch, epoch_loss))
+        print("epoch %d loss:%0.3f" % (epoch, epoch_loss/step))
     torch.save(model.state_dict(), 'weights_%d.pth' % epoch)
     return model
 
@@ -50,7 +49,7 @@ def train_model(model, criterion, optimizer, dataload, num_epochs=20):
 def train():
     model = Unet(3, 1).to(device)
     batch_size = args.batch_size
-    criterion = torch.nn.BCELoss()
+    criterion = nn.BCEWithLogitsLoss()
     optimizer = optim.Adam(model.parameters())
     liver_dataset = LiverDataset("data/train",transform=x_transforms,target_transform=y_transforms)
     dataloaders = DataLoader(liver_dataset, batch_size=batch_size, shuffle=True, num_workers=4)
@@ -78,7 +77,7 @@ if __name__ == '__main__':
     parse = argparse.ArgumentParser()
     parse.add_argument("action", type=str, help="train or test")
     parse.add_argument("--batch_size", type=int, default=8)
-    parse.add_argument("--ckp", type=str, help="the path of model weight file")
+    parse.add_argument("--ckpt", type=str, help="the path of model weight file")
     args = parse.parse_args()
 
     if args.action=="train":
