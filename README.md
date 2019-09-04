@@ -44,7 +44,11 @@ python main.py train
 ## 测试模型训练
 加载权重，默认保存最后一个权重
 ```
-python main.py test --ckp=weights_19.pth
+python main.py test --ckpt=weights_19.pth
 ```
+## 多类别
+修改2个地方即可：unet最后一层的通道数设置为类别数；损失函数使用CrossEntropyLoss
+
+
 
 ![](https://img-blog.csdn.net/20180508083935908)
