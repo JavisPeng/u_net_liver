@@ -58,7 +58,7 @@ def train():
 #显示模型的输出结果
 def test():
     model = Unet(3, 1)
-    model.load_state_dict(torch.load(args.ckp,map_location='cpu'))
+    model.load_state_dict(torch.load(args.ckpt,map_location='cpu'))
     liver_dataset = LiverDataset("data/val", transform=x_transforms,target_transform=y_transforms)
     dataloaders = DataLoader(liver_dataset, batch_size=1)
     model.eval()
