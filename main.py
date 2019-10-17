@@ -18,9 +18,6 @@ x_transforms = transforms.Compose([
 # mask只需要转换为tensor
 y_transforms = transforms.ToTensor()
 
-#参数解析
-parse=argparse.ArgumentParser()
-
 def train_model(model, criterion, optimizer, dataload, num_epochs=20):
     for epoch in range(num_epochs):
         print('Epoch {}/{}'.format(epoch, num_epochs - 1))
@@ -46,7 +43,7 @@ def train_model(model, criterion, optimizer, dataload, num_epochs=20):
     return model
 
 #训练模型
-def train():
+def train(args):
     model = Unet(3, 1).to(device)
     batch_size = args.batch_size
     criterion = nn.BCEWithLogitsLoss()
@@ -74,6 +71,8 @@ def test(args):
 
 
 if __name__ == '__main__':
+    #参数解析
+    parse=argparse.ArgumentParser()
     parse = argparse.ArgumentParser()
     parse.add_argument("action", type=str, help="train or test")
     parse.add_argument("--batch_size", type=int, default=8)
@@ -81,6 +80,6 @@ if __name__ == '__main__':
     args = parse.parse_args()
 
     if args.action=="train":
-        train()
+        train(args)
     elif args.action=="test":
         test(args)
