@@ -56,7 +56,7 @@ def train():
     train_model(model, criterion, optimizer, dataloaders)
 
 #显示模型的输出结果
-def test():
+def test(args):
     model = Unet(3, 1)
     model.load_state_dict(torch.load(args.ckpt,map_location='cpu'))
     liver_dataset = LiverDataset("data/val", transform=x_transforms,target_transform=y_transforms)
@@ -83,4 +83,4 @@ if __name__ == '__main__':
     if args.action=="train":
         train()
     elif args.action=="test":
-        test()
+        test(args)
