@@ -9,7 +9,7 @@ structure of project
    		--train
    		--val
 ```
-to download data and trained weight link:https://pan.baidu.com/s/1oCKoujsZGi5iV1w1xiwTVg code: 1dhw 
+to download data and trained weight link: https://pan.baidu.com/s/1dgGnsfoSmL1lbOUwyItp6w code: 17yr 
 
 
 ## training
@@ -34,7 +34,9 @@ python main.py test --ckpt=weights_19.pth
    		--val
 ```
 
-数据和权重可以使用百度云下载 链接: https://pan.baidu.com/s/1oCKoujsZGi5iV1w1xiwTVg 提取码: 1dhw 
+数据和权重可以使用百度云下载 链接: h
+
+链接: https://pan.baidu.com/s/1dgGnsfoSmL1lbOUwyItp6w 提取码: 17yr
 
 ## 模型训练
 ```
