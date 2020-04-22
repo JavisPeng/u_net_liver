@@ -9,7 +9,7 @@ structure of project
    		--train
    		--val
 ```
-to download data and trained weight link: https://pan.baidu.com/s/1dgGnsfoSmL1lbOUwyItp6w code: 17yr 
+data and trained weight link: https://pan.baidu.com/s/1dgGnsfoSmL1lbOUwyItp6w code: 17yr 
 
 
 ## training
@@ -34,7 +34,7 @@ python main.py test --ckpt=weights_19.pth
    		--val
 ```
 
-数据和权重可以使用百度云下载 链接: h
+数据和权重可以使用百度云下载 链接: 
 
 链接: https://pan.baidu.com/s/1dgGnsfoSmL1lbOUwyItp6w 提取码: 17yr
 
@@ -50,7 +50,15 @@ python main.py test --ckpt=weights_19.pth
 ```
 ## 多类别
 修改2个地方即可：unet最后一层的通道数设置为类别数；损失函数使用CrossEntropyLoss
+```python
+bath_size,img_size,num_classes=2,3,4
+#model = Unet(3, num_classes)
+criterion = nn.CrossEntropyLoss()
+#assume the pre is the output of the model
+pred=torch.rand(bath_size,num_classes,img_size,img_size)
+target=torch.randint(num_classes,(bath_size,img_size,img_size))
+loss=criterion(pred,target)
+```
 
-
-
-![](https://img-blog.csdn.net/20180508083935908)
+## Demo
+![liver](https://img-blog.csdn.net/20180508083935908)
