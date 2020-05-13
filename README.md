@@ -54,7 +54,7 @@ python main.py test --ckpt=weights_19.pth
 bath_size,img_size,num_classes=2,3,4
 #model = Unet(3, num_classes)
 criterion = nn.CrossEntropyLoss()
-#assume the pre is the output of the model
+#assume the pred is the output of the model
 pred=torch.rand(bath_size,num_classes,img_size,img_size)
 target=torch.randint(num_classes,(bath_size,img_size,img_size))
 loss=criterion(pred,target)
