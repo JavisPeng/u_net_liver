@@ -63,7 +63,7 @@ def test(args):
     plt.ion()
     with torch.no_grad():
         for x, _ in dataloaders:
-            y=model(x)
+            y=model(x).sigmoid()
             img_y=torch.squeeze(y).numpy()
             plt.imshow(img_y)
             plt.pause(0.01)
