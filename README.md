@@ -10,7 +10,7 @@ structure of project
    		--val
 ```
 data and trained weight link: https://pan.baidu.com/s/1dgGnsfoSmL1lbOUwyItp6w code: 17yr 
-
+all dataset you can access from: https://competitions.codalab.org/competitions/15595
 
 ## training
 ```
@@ -37,6 +37,7 @@ python main.py test --ckpt=weights_19.pth
 数据和权重可以使用百度云下载 链接: 
 
 链接: https://pan.baidu.com/s/1dgGnsfoSmL1lbOUwyItp6w 提取码: 17yr
+全部数据集: https://competitions.codalab.org/competitions/15595
 
 ## 模型训练
 ```
